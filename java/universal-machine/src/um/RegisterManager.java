@@ -1,3 +1,5 @@
+package um;
+
 public class RegisterManager {
     private final int[] registers = new int[8];
 

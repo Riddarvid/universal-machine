@@ -1,3 +1,5 @@
+package um;
+
 public class UniversalMachine {
     private final Memory memory;
     private final RegisterManager registers;
@@ -64,9 +66,12 @@ public class UniversalMachine {
     }
 
     private void loadProgram(int regB, int regC) {
-        int newProgram = registers.get(regB);
-        memory.loadProgram(newProgram);
-        pc = registers.get(regC);
+        int index = registers.get(regB);
+        int offset = registers.get(regC);
+        if (index != 0) {
+            memory.loadProgram(index);
+        }
+        pc = offset;
     }
 
     private void output(int regC) {

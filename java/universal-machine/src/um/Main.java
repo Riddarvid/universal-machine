@@ -1,3 +1,5 @@
+package um;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -16,7 +18,7 @@ public class Main {
 
     private Memory initializeMemory() {
         try {
-            byte[] bytes = Files.readAllBytes(Path.of(getClass().getResource("sandmark.umz").getPath()));
+            byte[] bytes = Files.readAllBytes(Path.of(getClass().getResource("codex.umz").getPath()));
             Integer[] program = new Integer[bytes.length / 4];
             for (int i = 0; i < bytes.length; i += 4) {
                 int value = 0;
